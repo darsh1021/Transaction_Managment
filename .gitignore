@@ -1,0 +1,78 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+# 📝 Logs
+
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 🧪 Testing
+
+coverage/
+.nyc_output/
+
+# 📦 Build output
+
+dist/
+build/
+
+# 🧠 Runtime data
+
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# 💻 OS files
+
+.DS_Store
+Thumbs.db
+
+# 🧾 IDE / Editor files
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 🔥 Temporary files
+
+tmp/
+temp/
+
+# 🐳 Docker (optional)
+
+docker-compose.override.yml
+
+# 📁 Uploads (if you store files locally)
+
+uploads/
+
+# 🔑 Keys / Certificates
+
+*.pem
+*.key
+*.crt
+
+# 📊 Database files (if local)
+
+*.sqlite
+*.db
+
+# 📦 Cache
+
+.cache/
+
+# 🔄 Node process manager
+
+.pm2/
+
+# 📁 Misc
+
+*.tgz
