@@ -41,4 +41,15 @@ Added register and login controllers which will be used to use service and creat
 Router 
 file : authRoute
 Added the router for login and signup 
- 
+
+2. Financial Records Management (Phase 2)
+Create backend support for financial data such as transactions or entries.
+
+file : userController 
+Created to see all users and if you want to change <b>role & status</b>  or permissions as Admin
+
+file:FinancialRecord.js 
+Model for tracking the finance 
+
+
+
