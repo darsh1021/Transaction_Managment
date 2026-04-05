@@ -49,7 +49,15 @@ file : userController
 Created to see all users and if you want to change <b>role & status</b>  or permissions as Admin
 
 file:FinancialRecord.js 
-Model for tracking the finance 
+Model for tracking the finance
 
+file :recordService.js
+This service handles the busincess logic for data fetching , updating and deleting
 
+file: recordController.js
+for getting or adding the data 
 
+file:recordRoutes.js
+The routes for creating request and response life cycle for handling the records 
+
+Done with the second module and tired 
