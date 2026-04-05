@@ -1,22 +1,22 @@
-import jwt, { decode } from "jsonwebtoken"
+import jwt from "jsonwebtoken"
 import { User } from "../Models/UserModel.js"
 
 export const protect = async (req, res, next) => {
 
     try {
         let token;
-        if (req.headers.authorization && req.headers.authorization.startWith('Bearer')) {
-            token = req.headers.authorize.split(' ')[1];
+        if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+            token = req.headers.authorization.split(' ')[1];
         }
 
         if (!token) {
             return res.status(401).json({ message: 'Authentication required please Login' });
         }
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'fallbacke_secret');
-        const user = await User.findById(decode.id);
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'fallback_secret');
+        const user = await User.findById(decoded.id);
 
         if (!user) {
-            return res.status(401).json({ message: "User belonging to this token not exitst " });
+            return res.status(401).json({ message: "User belonging to this token not exists" });
         }
 
         if (user.status === 'inactive') {
@@ -32,9 +32,9 @@ export const protect = async (req, res, next) => {
 };
 
 export const authorize = (...roles) => {
-    return (resr, res, next) => {
+    return (req, res, next) => {
         if (!roles.includes(req.user.role)) {
-            return req.status(403).json({
+            return res.status(403).json({
                 status: "fail",
                 message: "Forbidden : You do not have permission to perform this action"
             });

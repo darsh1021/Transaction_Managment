@@ -1,10 +1,10 @@
-const User = require("../Models/UserModel.js")
+import { User } from "../Models/UserModel.js"
 export const getAllUsers = async (req, res) => {
     try {
         const users = await User.find().select('-__v');
         res.status(200).json({
             status: "success",
-            results: User.lenght,
+            results: users.length,
             data: { users }
         });
     }
@@ -27,7 +27,7 @@ export const updateUserAccess = async (req, res) => {
         })
 
         if (!user) {
-            return res.status(404).json({ status: "fail", message: "No user found with tahat id" });
+            return res.status(404).json({ status: "fail", message: "No user found with that id" });
         }
 
         res.status(200).json({

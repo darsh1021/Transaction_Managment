@@ -14,7 +14,7 @@ const recordSchema = new mongoose.Schema({
         enum: ['income', 'expense'],
         required: true
     },
-    catagory: {
+    category: {
         type: String,
         required: true,
         trim: true
