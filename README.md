@@ -60,4 +60,23 @@ for getting or adding the data
 file:recordRoutes.js
 The routes for creating request and response life cycle for handling the records 
 
-Done with the second module and tired 
+Done with the second module
+
+Continueing with phase 3 that is summary and dashboard 
+
+For getting summary we have 
+Way 1 : $facet stage only once. $facet enables various aggregations on the same set of input documents, without needing to retrieve the input documents multiple times.
+
+for less data it provide faster computation and calculation for each time user open dashboard it is good for an MVP
+
+Way 2 : PreCompute 
+Compute as data arrives o(1) which is basically store the summary of the old data and use it to comput new result 
+It is suitable for
+10K – 1M records
+Frequent dashboard usage
+Growing app
+
+Way 3  :Redis and asynchronous processing
+At huge scale, you separate computation from request handling by using background workers to precompute data and Redis to serve it instantly, ensuring high performance and low database load.
+
+
