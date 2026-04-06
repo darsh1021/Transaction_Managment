@@ -79,4 +79,35 @@ Growing app
 Way 3  :Redis and asynchronous processing
 At huge scale, you separate computation from request handling by using background workers to precompute data and Redis to serve it instantly, ensuring high performance and low database load.
 
+<img width="1194" height="1316" alt="image" src="https://github.com/user-attachments/assets/b258fb13-9706-40db-8742-e176e523911d" />
+
+Controller → Service → Cache Utility → Redis
+
+Created  new Utils folder which contains redis.js
+It connects the redis.js and handle the port , host , retry and lazyConnect : Redis connect when needed 
+
+retry after delay 
+Attempt	Delay
+1	50ms
+2	100ms
+10	500ms
+Max	2000ms
+
+call getCache if data exits return else  call the setCache store Cache and store it in the db
+
+Way 4 : I just understand we can create Redis + Async +  Worker 
+for heavy task like aggreagation we can use worker which will reduce the extra waiting time required in case of time and easy to handle user requests 
+(In future)
+
+also added the redis and facet  which will handle some medium upto 10000 queries and work properly 
+
+Validation and error handling already added and error responses also added 
+
+***extras added 
+Authentication using tokens or sessions
+Search support Filter engine is added in getRecords 
+Unit tests or integration tests
+API documentation
+
+
 
