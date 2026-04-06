@@ -6,6 +6,7 @@ import { protect, authorize } from "../Middleware/authMiddleware.js"
 
 router.use(protect);
 
+router.get('/summary', authorize('analyst', 'admin'), recordController.getDashboardSummary);
 router.get('/', authorize('analyst', 'admin'), recordController.getRecords);
 router.post('/', authorize('admin'), recordController.createRecord);
 router.patch('/:id', authorize('admin'), recordController.updateRecords);

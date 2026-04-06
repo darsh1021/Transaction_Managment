@@ -61,3 +61,16 @@ export const deleteRecords = async (req, res) => {
         res.status(400).json({ status: "error", message: error.message });
     }
 }
+
+export const getDashboardSummary = async (req, res) => {
+    try {
+        const summary = await recordService.getDashboardSummary(req.user._id);
+
+        res.status(200).json({
+            status: 'success',
+            data: { summary }
+        });
+    } catch (error) {
+        res.status(400).json({ status: 'error', message: error.message });
+    }
+};

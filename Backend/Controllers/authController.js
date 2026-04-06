@@ -12,7 +12,7 @@ export const registerUser = async (req, res) => {
         });
     }
     catch (error) {
-        res.status(404).json({ status: "fail", message: error.message });
+        res.status(400).json({ status: "fail", message: error.message });
     }
 }
 
